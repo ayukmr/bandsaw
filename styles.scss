@@ -8,13 +8,13 @@
   margin: 10vh 0;
 
   .box {
-    border: 1px solid #ddd;
-    padding: 10px 10px 0 10px;
-    margin-right: 2.5%;
-
     width: 500px;
     height: 100%;
     max-height: 650px;
+
+    border: 1px solid #ddd;
+    padding: 10px 10px 0 10px;
+    margin-right: 2.5%;
 
     overflow: scroll;
 
@@ -53,9 +53,13 @@ ul {
 }
 
 button {
+  color:      #000;
   background: #eee;
-  display: block;
-  border:  1px solid #ddd;
+
+  display:   block;
+  font-size: 13px;
+  border:    1px solid #ddd;
+
   padding: 5px;
   margin-bottom: 10px;
 }
