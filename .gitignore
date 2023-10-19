@@ -1,0 +1,15 @@
+# macos
+.DS_Store
+
+# cargo
+Cargo.lock
+debug/
+target/
+
+# node
+node_modules
+build/
+
+# yarn
+.yarn-error.log
+yarn-error.log
