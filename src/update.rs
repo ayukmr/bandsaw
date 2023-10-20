@@ -34,15 +34,26 @@ pub fn update(app: &mut App, _ctx: &yew::Context<App>, msg: <App as BaseComponen
         Msg::CanvasInput(records) => {
             let mut student_ids = HashMap::new();
 
-            for row in records[1..].iter() {
+            for row in records[2..].iter() {
+                // split name
+                let name =
+                    row.get(0)
+                        .context("error occurred when accessing student name")?
+                        .split(", ")
+                        .collect::<Vec<&str>>();
+
                 // associate id with name
                 student_ids.insert(
-                    row.get(0)
-                        .context("error occurred when accessing student id")?
-                        .to_string(),
+                    format!(
+                        "{} {}",
+                        name.get(1)
+                            .context("error occurred when accessing last name")?,
+                        name.get(0)
+                            .context("error occurred when accessing first name")?,
+                    ),
 
                     row.get(1)
-                        .context("error occurred when accessing student name")?
+                        .context("error occurred when accessing student id")?
                         .to_string(),
                 );
             }
