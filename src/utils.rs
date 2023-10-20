@@ -26,7 +26,7 @@ pub fn format_data(
                     .unwrap_or_else(|| panic!("error when getting student data at {col}"))
                     .to_string();
 
-                if val.parse::<f32>().is_ok() {
+                if val.parse::<f32>().is_ok() || val.is_empty() {
                     // add mastery points
                     vec![val.clone(), val]
                 } else {
