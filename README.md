@@ -28,3 +28,8 @@ Build the webapp for production:
 ```
 $ trunk build --release
 ```
+
+## Tasks
+* Implement tests for CSV output
+* Add compatibility for other Google Sheet formats
+* Show popup when an internal error occurs
