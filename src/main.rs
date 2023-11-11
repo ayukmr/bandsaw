@@ -3,6 +3,7 @@ mod input;
 mod app;
 mod update;
 mod view;
+mod tests;
 
 use app::App;
 
