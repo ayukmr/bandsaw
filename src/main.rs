@@ -7,7 +7,7 @@ mod tests;
 
 use app::App;
 
-// entry function
+/// Entry function for webapp.
 fn main() {
     yew::Renderer::<App>::new().render();
 }

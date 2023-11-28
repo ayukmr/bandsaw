@@ -8,7 +8,7 @@ use csv::StringRecord;
 
 use anyhow::Result;
 
-// format input
+/// Creates Canvas CSV from student records, names and IDs.
 pub fn format_data(
     records:     &[StringRecord],
     names:       &[StudentName],
@@ -43,7 +43,7 @@ pub fn format_data(
     }).collect()
 }
 
-// column headers
+/// Creates headers from student records.
 pub fn data_headers(records: &[StringRecord]) -> Vec<String> {
     // number of headers
     let num_headers = records.get(1).unwrap().iter().fold(0, |acc, val| {
@@ -87,7 +87,7 @@ pub fn data_headers(records: &[StringRecord]) -> Vec<String> {
     headers
 }
 
-// create blob url
+/// Creates blob URL from data.
 pub fn blob_url(data: String) -> Result<String, JsValue> {
     // js array
     let data_ary = js_sys::Array::new();

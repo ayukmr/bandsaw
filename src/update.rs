@@ -12,7 +12,7 @@ use csv::Writer;
 
 use anyhow::{Result, Context};
 
-// update messages
+/// Responds to messages from component.
 pub fn update(app: &mut App, _ctx: &yew::Context<App>, msg: <App as BaseComponent>::Message) -> Result<bool> {
     match msg {
         // sheet records

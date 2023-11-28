@@ -3,7 +3,7 @@ use crate::input::Input;
 
 use yew::prelude::*;
 
-// component view
+/// Renders component view.
 pub fn view(app: &App, ctx: &Context<App>) -> Html {
     // context link
     let link = ctx.link().clone();

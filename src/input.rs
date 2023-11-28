@@ -6,32 +6,45 @@ use gloo::file::callbacks::FileReader;
 use web_sys::HtmlInputElement;
 use csv::{ReaderBuilder, StringRecord};
 
-// input state
+/// Component for file inputs.
 pub struct Input {
-    pub input:  NodeRef,
+    /// Input node reference.
+    pub input: NodeRef,
+
+    /// Input file reader.
     pub reader: Option<FileReader>,
 }
 
-// update messages
+/// Update messages for component.
 pub enum Msg {
+    /// Responds to click event.
     Click,
+
+    /// Responds to file input.
     FileInput(Event),
+
+    /// Converts input CSV into records.
     Convert(String)
 }
 
-// input props
+/// Properties for component.
 #[derive(Properties, PartialEq)]
 pub struct Props {
+    /// Input name.
     pub name: String,
+
+    /// Callback on data input.
     pub on_data: Callback<Vec<StringRecord>>,
 }
 
-// app component
 impl Component for Input {
-    type Message    = Msg;
+    /// Update messages for component.
+    type Message = Msg;
+
+    /// Properties for component.
     type Properties = Props;
 
-    // create component
+    /// Creates component.
     fn create(_ctx: &Context<Self>) -> Self {
         Self {
             input:   NodeRef::default(),
@@ -39,7 +52,7 @@ impl Component for Input {
         }
     }
 
-    // update messages
+    // Responds to update messages.
     fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
         let link = ctx.link().clone();
 
@@ -99,7 +112,7 @@ impl Component for Input {
         true
     }
 
-    // component view
+    /// Renders component view.
     fn view(&self, ctx: &Context<Self>) -> Html {
         // context link
         let link = ctx.link().clone();

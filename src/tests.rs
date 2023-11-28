@@ -7,7 +7,7 @@ mod tests {
     use csv::StringRecord;
 
     #[test]
-    // test output data
+    /// Tests [`format_data`] on sample data.
     fn test_format_data() {
         // input records
         let records = vec![
@@ -33,7 +33,7 @@ mod tests {
     }
 
     #[test]
-    // test output headers
+    /// Tests [`data_headers`] on sample data.
     fn test_data_headers() {
         // input records
         let records = vec![
